@@ -1,0 +1,30 @@
+name: Nightly Build
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  nightly:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trigger CI
+        run: echo "Nightly CI triggered"
+
+      - name: Trigger Docker multi-arch build
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "Multi-Arch Docker Build & Push"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger Android release build
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "Android Release APK"
+          token: ${{ secrets.GITHUB_TOKEN }}

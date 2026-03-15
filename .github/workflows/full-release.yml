@@ -1,0 +1,46 @@
+name: Full Release Pipeline
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  full-release:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run CI
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "DevOpsOS CI"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build signed APK
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "Android Release APK"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build multi-arch Docker image
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "Multi-Arch Docker Build & Push"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & deploy docs
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "Build & Deploy Docs"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run semantic release
+        run: npx semantic-release
