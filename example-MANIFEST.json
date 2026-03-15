@@ -1,0 +1,8 @@
+{
+  "id": "sample-plugin",
+  "name": "Sample Plugin",
+  "version": "1.0.0",
+  "entry": "index.js",
+  "description": "Example DevOpsOS plugin",
+  "categories": ["utility"]
+}

@@ -1,0 +1,57 @@
+<div id="onboarding-panel">
+  <div class="ob-card">
+    <h1>Welcome to DevOpsOS</h1>
+    <p>A modular DevOps environment for Android.</p>
+
+    <div class="ob-step" data-step="1">
+      <h2>Step 1 — Panels</h2>
+      <p>Select which panels you want enabled:</p>
+      <div class="ob-grid">
+        <label><input type="checkbox" data-panel="terminal" checked> Terminal</label>
+        <label><input type="checkbox" data-panel="editor" checked> Editor</label>
+        <label><input type="checkbox" data-panel="system" checked> System Monitor</label>
+        <label><input type="checkbox" data-panel="process" checked> Process Manager</label>
+        <label><input type="checkbox" data-panel="filemanager" checked> File Manager</label>
+        <label><input type="checkbox" data-panel="plugins" checked> Plugins</label>
+        <label><input type="checkbox" data-panel="ssh"> SSH</label>
+        <label><input type="checkbox" data-panel="tor"> Tor</label>
+      </div>
+      <button class="ob-next">Next</button>
+    </div>
+
+    <div class="ob-step" data-step="2" style="display:none;">
+      <h2>Step 2 — Theme</h2>
+      <p>Choose your theme:</p>
+      <select id="ob-theme">
+        <option value="hacker">Hacker (Green on Black)</option>
+        <option value="dark" selected>Dark</option>
+        <option value="light">Light</option>
+        <option value="neon">Neon</option>
+      </select>
+      <button class="ob-prev">Back</button>
+      <button class="ob-next">Next</button>
+    </div>
+
+    <div class="ob-step" data-step="3" style="display:none;">
+      <h2>Step 3 — Backend</h2>
+      <label><input type="checkbox" id="ob-autostart" checked> Auto-start backend on app launch</label><br>
+      <label>Port: <input type="number" id="ob-port" value="8080"></label><br>
+      <label>
+        Security Mode:
+        <select id="ob-security">
+          <option value="local" selected>Local only</option>
+          <option value="lan">LAN</option>
+        </select>
+      </label>
+      <button class="ob-prev">Back</button>
+      <button class="ob-next">Next</button>
+    </div>
+
+    <div class="ob-step" data-step="4" style="display:none;">
+      <h2>Ready</h2>
+      <p>Your DevOpsOS environment is configured. Click Finish to start.</p>
+      <button class="ob-prev">Back</button>
+      <button id="ob-finish">Finish</button>
+    </div>
+  </div>
+</div>

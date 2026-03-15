@@ -1,0 +1,12 @@
+#insights-panel { padding: 16px; }
+.insight-item {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+.insight-item:hover {
+  background: var(--hover);
+}
+.ins-title { font-weight: bold; }
+.ins-sub { opacity: 0.7; }
+.ins-cat { opacity: 0.5; font-size: 11px; }

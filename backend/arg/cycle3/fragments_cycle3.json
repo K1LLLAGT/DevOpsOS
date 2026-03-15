@@ -1,0 +1,9 @@
+{
+  "found": [],
+  "all": [
+    { "id": "M1", "text": "YOU", "corrupted": false },
+    { "id": "M2", "text": "ARE", "corrupted": false },
+    { "id": "M3", "text": "THE", "corrupted": false },
+    { "id": "M4", "text": "ROOT", "corrupted": false }
+  ]
+}

@@ -1,0 +1,49 @@
+name: DevOpsOS CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+
+    - name: Install backend dependencies
+      working-directory: backend
+      run: |
+        npm install ssh2 node-pty
+
+    - name: Verify manifest integrity
+      run: |
+        chmod +x tools/devopsos-manifest.sh
+        chmod +x tools/devopsos-verify.sh
+        ./tools/devopsos-verify.sh .
+
+    - name: Run DevOpsOS scanner
+      run: |
+        chmod +x tools/devopsos-scan.js
+        node tools/devopsos-scan.js
+
+    - name: Build Android APK (Debug)
+      working-directory: android-app
+      run: |
+        chmod +x ./gradlew
+        ./gradlew assembleDebug --stacktrace
+
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: DevOpsOS-debug
+        path: android-app/app/build/outputs/apk/debug/app-debug.apk

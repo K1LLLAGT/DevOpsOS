@@ -1,0 +1,7 @@
+#marketplace-panel { padding: 16px; }
+.mp-item {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.mp-title { font-weight: bold; }
+.mp-sub { opacity: 0.7; }

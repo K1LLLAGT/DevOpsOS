@@ -1,0 +1,33 @@
+<div id="process-manager">
+
+  <div id="process-controls">
+    <input id="process-search" type="text" placeholder="Search processes...">
+    <select id="process-sort">
+      <option value="cpu">Sort by CPU</option>
+      <option value="mem">Sort by Memory</option>
+      <option value="pid">Sort by PID</option>
+      <option value="name">Sort by Name</option>
+    </select>
+    <label>
+      <input type="checkbox" id="process-tree">
+      Tree Mode
+    </label>
+  </div>
+
+  <table id="process-table">
+    <thead>
+      <tr>
+        <th>PID</th>
+        <th>PPID</th>
+        <th>Name</th>
+        <th>CPU%</th>
+        <th>MEM%</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="process-body">
+      <tr><td colspan="6">Loading...</td></tr>
+    </tbody>
+  </table>
+
+</div>

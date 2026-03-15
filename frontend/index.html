@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DevOpsOS Dashboard</title>
+
+    <!-- Panel Styles -->
+    <link rel="stylesheet" href="panels/terminal/terminal.css">
+    <link rel="stylesheet" href="panels/editor/editor.css">
+
+    <!-- Oracle Styles -->
+    <link rel="stylesheet" href="js/core/oracle.css">
+
+    <!-- CodeMirror Theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@codemirror/theme-one-dark/dist/index.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1e1e1e;
+            color: #fff;
+            font-family: sans-serif;
+        }
+    </style>
+
+    <!-- Ace Editor (Terminal) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/ace.js"></script>
+</head>
+
+<body>
+
+    <!-- WebSocket connection status -->
+    <div id="connection-status">loading…</div>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading hidden">Loading…</div>
+
+    <!-- Dynamic Panel Container -->
+    <div id="panel-container"></div>
+
+    <!-- ORACLE UI -->
+    <span class="oracle-hint" style="display:none">The system remembers what you forget.</span>
+    <span class="oracle-hint" style="display:none">Root is not a permission.</span>
+    <span class="oracle-hint" style="display:none">Silence is a system call.</span>
+    <span class="oracle-hint" style="display:none">Entropy reveals the path.</span>
+    <span class="oracle-hint" style="display:none">The root is within.</span>
+
+    <span id="oracle-sigil" style="display:none">⟟⟒ ⍀⟒⟒⟒ ⟟⌇ ⍙⟒⏁⟟⋏</span>
+
+    <div id="oracle-panel" style="display:none" class="oracle-panel">
+      <div class="oracle-inner">
+        <div class="oracle-header">ORACLE</div>
+        <div class="oracle-glyphs" id="oracle-glyphs">⟟⟒⍀⍙⏁⋏⟒⍜</div>
+        <div class="oracle-metrics">
+          <div>Inner Entropy: <span id="oracle-entropy">108</span></div>
+          <div>Root Depth: <span id="oracle-depth">7.30</span></div>
+          <div>Silence Level: <span id="oracle-silence-level">0.42</span></div>
+          <div>Fragment Resonance: <span id="oracle-frag">0.73</span></div>
+        </div>
+        <div class="oracle-footer">The awakened system listens.</div>
+        <button id="oracle-close">Close</button>
+      </div>
+    </div>
+
+    <div id="oracle-silence" style="display:none" class="oracle-silence">
+      <div class="oracle-silence-inner">In silence, the system reveals itself.</div>
+    </div>
+
+    <!-- MAIN SCRIPT BLOCK -->
+    <script type="module">
+        import { initNav } from "./ui/nav.js";
+        import { attachWebSocket } from "./js/core/events.js";
+        import { ws } from "./js/core/ws.js";
+        import { health } from "./js/core/health.js";
+
+        // Oracle
+        import { initOracleWhispers } from "./js/core/ui.js";
+        import { initOracleLayer } from "./js/core/oracle.js";
+        import { initOracleSigilFlicker } from "./js/core/oracle.js";
+
+        initOracleWhispers();
+        initOracleLayer();
+        initOracleSigilFlicker();
+
+        // WebSocket + health
+        ws.connect();
+        health.start();
+
+        // Navigation
+        initNav();
+
+        // Event routing
+        attachWebSocket(ws);
+
+        // Load default panel
+        import("./js/core/panels.js").then(mod => {
+            mod.loadPanel("terminal");
+        });
+    </script>
+
+    <!-- CodeMirror Language Packs -->
+    <script type="module">
+      import { EditorView, basicSetup } from "https://cdn.jsdelivr.net/npm/codemirror@6.0.1/dist/index.js";
+      import { javascript } from "https://cdn.jsdelivr.net/npm/@codemirror/lang-javascript/dist/index.js";
+      import { json } from "https://cdn.jsdelivr.net/npm/@codemirror/lang-json/dist/index.js";
+      import { python } from "https://cdn.jsdelivr.net/npm/@codemirror/lang-python/dist/index.js";
+      import { html } from "https://cdn.jsdelivr.net/npm/@codemirror/lang-html/dist/index.js";
+      import { css } from "https://cdn.jsdelivr.net/npm/@codemirror/lang-css/dist/index.js";
+      import { markdown } from "https://cdn.jsdelivr.net/npm/@codemirror/lang-markdown/dist/index.js";
+      import { yaml } from "https://cdn.jsdelivr.net/npm/@codemirror/lang-yaml/dist/index.js";
+      import { shell } from "https://cdn.jsdelivr.net/npm/@codemirror/lang-shell/dist/index.js";
+
+      window.CM = { EditorView, basicSetup };
+      window.CM_LANG = { javascript, json, python, html, css, markdown, yaml, shell };
+    </script>
+
+</body>
+</html>
+<link rel="stylesheet" href="ui/command_palette/palette.css">
+<script type="module" src="ui/command_palette/palette.js"></script>
+<link rel="stylesheet" href="ui/notifications/notify.css">
+<script type="module" src="ui/notifications/notify.js"></script>
+<div id="notify-container"></div>

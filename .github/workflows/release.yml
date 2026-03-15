@@ -1,0 +1,29 @@
+name: DevOpsOS Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+
+    - name: Build Android APK
+      working-directory: android-app
+      run: |
+        chmod +x ./gradlew
+        ./gradlew assembleRelease --stacktrace
+
+    - name: Upload Release APK
+      uses: softprops/action-gh-release@v2
+      with:
+        files: android-app/app/build/outputs/apk/release/app-release.apk

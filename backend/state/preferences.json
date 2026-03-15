@@ -1,0 +1,73 @@
+{
+  "theme": {
+    "mode": "dark",
+    "accent": "green",
+    "animations": true
+  },
+  "terminal": {
+    "font": "Fira Code",
+    "fontSize": 14,
+    "cursor": "block",
+    "scrollback": 5000,
+    "shell": "bash"
+  },
+  "appearance": {
+    "uiDensity": "comfortable",
+    "rounding": "medium",
+    "transparency": 0.0
+  },
+  "network": {
+    "marketplaceSources": ["default"],
+    "proxy": null,
+    "updateChannel": "stable"
+  },
+  "plugins": {
+    "sandbox": true,
+    "autostart": []
+  },
+  "layout": {
+    "order": [
+      "terminal",
+      "editor",
+      "marketplace",
+      "system",
+      "process",
+      "plugins",
+      "settings"
+    ],
+    "hidden": [],
+    "pinned": [],
+    "sizes": {}
+  },
+  "developer": {
+    "enabled": false
+  },
+  "arg": {
+    "whisperIntensity": 1.0,
+    "showFragments": false,
+    "showLayers": false
+  }
+}
+,
+"system": {
+  "refreshInterval": 2000
+}
+,
+"process": {
+  "sort": "cpu",
+  "tree": false
+}
+,
+"system": {
+  "refreshInterval": 2000,
+  "graphSmoothing": true,
+  "networkUnits": "KB",
+  "tempUnits": "C"
+}
+,
+"process": {
+  "sort": "cpu",
+  "tree": false,
+  "pinned": [],
+  "refreshInterval": null
+}

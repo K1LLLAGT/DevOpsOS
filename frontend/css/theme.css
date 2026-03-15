@@ -1,0 +1,27 @@
+:root {
+  --bg: #111;
+  --fg: #eee;
+  --panel-bg: #1a1a1a;
+  --border: #333;
+  --hover: #222;
+
+  --accent: #39ff14;
+
+  --font: "Fira Code", monospace;
+}
+
+/* Light Mode */
+:root.light {
+  --bg: #fafafa;
+  --fg: #111;
+  --panel-bg: #ffffff;
+  --border: #ddd;
+  --hover: #f0f0f0;
+}
+
+/* Accent Colors */
+:root.accent-green  { --accent: #39ff14; }
+:root.accent-blue   { --accent: #4da6ff; }
+:root.accent-purple { --accent: #b366ff; }
+:root.accent-red    { --accent: #ff4d4d; }
+:root.accent-gold   { --accent: #ffcc33; }

@@ -1,0 +1,37 @@
+name: Lint & Format
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+
+    - name: Install linting tools
+      run: |
+        npm install -g prettier eslint
+
+    - name: Run Prettier
+      run: |
+        prettier --write .
+
+    - name: Run ESLint
+      run: |
+        eslint . --ext .js --fix || true
+
+    - name: Commit fixes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore: auto-format and lint fixes"

@@ -1,0 +1,82 @@
+{
+  "type": "object",
+  "required": ["name", "version", "entrypoint", "permissions", "capabilities"],
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "author": { "type": "string" },
+    "description": { "type": "string" },
+
+    "entrypoint": { "type": "string" },
+
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "filesystem": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "network": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "system": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "capabilities": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+
+    "sandbox": {
+      "type": "string",
+      "enum": ["strict", "relaxed", "none"],
+      "default": "strict"
+    },
+
+    "allowedAPIs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+
+    "storage": {
+      "type": "object",
+      "properties": {
+        "scoped": { "type": "boolean" },
+        "quotaMB": { "type": "number" }
+      }
+    }
+  }
+}
+,
+"actions": {
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "title", "handler"],
+    "properties": {
+      "id": { "type": "string" },
+      "title": { "type": "string" },
+      "description": { "type": "string" },
+      "handler": { "type": "string", "enum": ["frontend", "backend"] },
+      "payload": { "type": "object" }
+    }
+  }
+}
+,
+"events": {
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["on", "handler"],
+    "properties": {
+      "on": { "type": "string" },
+      "handler": { "type": "string" }
+    }
+  }
+}

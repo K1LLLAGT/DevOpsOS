@@ -1,0 +1,7 @@
+#crashlog-panel { padding: 16px; }
+.crash-item {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.crash-error { font-weight: bold; }
+.crash-ts { opacity: 0.6; font-size: 11px; }

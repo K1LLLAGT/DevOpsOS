@@ -1,0 +1,5 @@
+#filemanager-panel { padding:10px; background:#111; color:white; height:100%; overflow-y:auto; }
+.fm-item { padding:6px; border-bottom:1px solid #333; cursor:pointer; }
+.fm-item:hover { background:#222; }
+.fm-dir { color:#4fc3f7; }
+.fm-file { color:white; }

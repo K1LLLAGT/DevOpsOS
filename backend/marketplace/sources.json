@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "id": "local",
+      "type": "local",
+      "path": "backend/marketplace/catalog.json"
+    },
+    {
+      "id": "github_official",
+      "type": "github",
+      "url": "https://raw.githubusercontent.com/DevOpsOS/plugins/main/catalog.json"
+    },
+    {
+      "id": "lan_registry",
+      "type": "http",
+      "url": "http://192.168.1.50:8080/catalog.json"
+    },
+    {
+      "id": "tor_hidden",
+      "type": "http",
+      "url": "http://abcxyz123.onion/catalog.json"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+/* ============================
+   SIDEBAR LAYOUT
+   ============================ */
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 210px;
+    height: 100vh;
+    background: #0f0f0f;
+    color: #fff;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-right: 1px solid #222;
+    z-index: 999;
+}
+
+/* ============================
+   NAVIGATION ITEMS
+   ============================ */
+.nav-item {
+    padding: 12px 22px;
+    cursor: pointer;
+    color: #bbb;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.nav-item:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.nav-item.active {
+    background: #242424;
+    color: #4fc3f7;
+    font-weight: 600;
+}
+
+/* Milestone‑6 Active State for Dynamic Panels */
+[data-panel].active {
+    background: #1e90ff;
+    color: white;
+}
+
+/* ============================
+   MAIN CONTENT AREA
+   ============================ */
+#main-content {
+    margin-left: 210px;
+    height: 100vh;
+    overflow: hidden;
+    background: #1e1e1e;
+}
+
+/* ============================
+   DEVMODE EFFECTS
+   ============================ */
+.devmode-unlock-flash {
+  animation: oracleFlash 1.2s ease-out;
+}
+
+@keyframes oracleFlash {
+  0% { opacity: 0; filter: blur(6px); }
+  40% { opacity: 1; filter: blur(0px); }
+  70% { opacity: 1; }
+  100% { opacity: 0.85; }
+}
+
+body.devmode-active {
+  --accent: #00ffaa;
+  --glow: 0 0 8px #00ffaa;
+}
+
+body.devmode-active .nav {
+  box-shadow: var(--glow);
+}
+
+/* ============================
+   ORACLE PANEL
+   ============================ */
+.oracle-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  color: #00ffaa;
+}
+
+.oracle-inner {
+  border: 1px solid #00ffaa;
+  padding: 16px 20px;
+  background: #050608;
+  min-width: 320px;
+  max-width: 480px;
+  box-shadow: 0 0 16px #00ffaa55;
+}
+
+.oracle-header {
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: 0.2em;
+}
+
+.oracle-glyphs {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.oracle-metrics div {
+  margin: 2px 0;
+}
+
+.oracle-footer {
+  margin-top: 10px;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+#oracle-close {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #00ffaa;
+  color: #00ffaa;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+/* ============================
+   ORACLE SILENCE OVERLAY
+   ============================ */
+.oracle-silence {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #00ffaa;
+  font-family: monospace;
+}
+
+.oracle-silence-inner {
+  border: 1px solid #00ffaa;
+  padding: 10px 16px;
+  background: #050608;
+}
+
+/* ============================
+   MILESTONE‑6 LOADER
+   ============================ */
+.loading {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  background: #222;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none;
+}

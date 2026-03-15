@@ -1,0 +1,57 @@
+#command-palette {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10vh;
+  z-index: 9999;
+}
+
+#command-palette.hidden {
+  display: none;
+}
+
+#cp-container {
+  width: 600px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+#cp-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+.cp-item {
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cp-item:hover {
+  background: var(--hover);
+}
+
+.cp-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cp-desc {
+  font-size: 13px;
+  opacity: 0.7;
+}
+.cp-item.plugin {
+  border-left: 4px solid #00aaff;
+}

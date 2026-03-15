@@ -1,0 +1,29 @@
+# Node
+node_modules/
+logs/
+*.log
+
+# Android
+android-sdk/
+android-app/app/build/
+*.apk
+*.aab
+
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Python
+__pycache__/
+
+# DevOpsOS internal
+DevOpsOS_ubuntu/
+DevOpsOS_ubuntu_backup.tar.gz
+*.tar.gz
+*.zip
+
+# System
+.DS_Store
+.env
+.env.example

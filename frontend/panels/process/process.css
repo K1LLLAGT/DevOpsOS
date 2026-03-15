@@ -1,0 +1,31 @@
+#process-manager {
+  padding: 16px;
+}
+
+#process-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+#process-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#process-table th, #process-table td {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+#process-table tr:hover {
+  background: var(--hover);
+}
+
+.kill-btn {
+  background: #ff4d4d;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,8 @@
+#timeline-panel { padding: 16px; }
+.timeline-item {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.tl-title { font-weight: bold; }
+.tl-sub { opacity: 0.7; }
+.tl-ts { opacity: 0.5; font-size: 11px; }

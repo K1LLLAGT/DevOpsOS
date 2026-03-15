@@ -1,0 +1,3 @@
+#ssh-panel{display:flex;flex-direction:column;height:100%;background:#000;color:#0f0;font-family:monospace;}
+#ssh-output{flex:1;overflow-y:auto;padding:10px;white-space:pre-wrap;}
+#ssh-input{padding:10px;background:#111;color:#0f0;border:none;}

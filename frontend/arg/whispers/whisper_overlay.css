@@ -1,0 +1,17 @@
+.whisper-overlay {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0.0;
+  animation: whisper-fade 4s ease-in-out forwards;
+  font-size: 13px;
+  color: var(--accent);
+  pointer-events: none;
+}
+
+@keyframes whisper-fade {
+  0% { opacity: 0; }
+  20% { opacity: 0.4; }
+  80% { opacity: 0.4; }
+  100% { opacity: 0; }
+}

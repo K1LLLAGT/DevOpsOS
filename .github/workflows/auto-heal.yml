@@ -1,0 +1,49 @@
+name: Auto-Heal DevOpsOS
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch:
+
+jobs:
+  heal:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+
+    - name: Make scripts executable
+      run: |
+        chmod +x tools/devopsos-manifest.sh
+        chmod +x tools/devopsos-verify.sh
+        chmod +x tools/devopsos-heal.sh
+
+    - name: Run manifest verification
+      id: verify
+      run: |
+        ./tools/devopsos-verify.sh . || echo "DRIFT_DETECTED=true" >> $GITHUB_ENV
+
+    - name: Heal drift
+      if: env.DRIFT_DETECTED == 'true'
+      run: |
+        ./tools/devopsos-heal.sh .
+
+    - name: Commit healed files
+      if: env.DRIFT_DETECTED == 'true'
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "fix: auto-heal drift"
+        branch: "auto-heal/$(date +%Y%m%d%H%M)"
+
+    - name: Create PR
+      if: env.DRIFT_DETECTED == 'true'
+      uses: peter-evans/create-pull-request@v6
+      with:
+        title: "Auto-Heal: Drift Repair"
+        body: "This PR contains automatic repairs detected by the DevOpsOS manifest."
+        labels: auto-heal

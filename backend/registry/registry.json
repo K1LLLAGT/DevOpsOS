@@ -1,0 +1,31 @@
+{
+  "plugins": []
+}
+{
+  "plugins": [
+    {
+      "name": "ExamplePlugin",
+      "version": "1.0.0",
+      "description": "Demonstration plugin for DevOpsOS Marketplace.",
+      "author": "DevOpsOS Team",
+      "homepage": "https://example.com/plugin",
+      "categories": ["Utilities", "System"],
+      "download": "https://example.com/plugins/exampleplugin.zip",
+      "signature": "BASE64_SIGNATURE_HERE",
+      "screenshots": [
+        "https://example.com/plugins/example/screenshot1.png"
+      ],
+      "permissions": {
+        "filesystem": ["./data"],
+        "network": ["api.example.com"],
+        "system": []
+      },
+      "capabilities": [
+        "ui.panel",
+        "storage.read",
+        "storage.write"
+      ],
+      "trust": "official"
+    }
+  ]
+}

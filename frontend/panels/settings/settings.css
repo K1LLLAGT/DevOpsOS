@@ -1,0 +1,30 @@
+#settings-panel {
+  display: flex;
+  gap: 12px;
+  height: 100%;
+  padding: 12px;
+}
+
+#settings-list {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow-y: auto;
+  background: var(--panel-bg);
+}
+
+#settings-editor {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  background: var(--panel-bg);
+}
+.setting-item {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+.setting-item:hover {
+  background: var(--hover);
+}

@@ -1,0 +1,10 @@
+{
+  "found": [],
+  "all": [
+    { "id": "f5", "text": "YOU", "corrupted": false },
+    { "id": "f1", "text": "THE", "corrupted": false },
+    { "id": "f2", "text": "ROOT", "corrupted": false },
+    { "id": "f3", "text": "IS", "corrupted": false },
+    { "id": "f4", "text": "WITHIN", "corrupted": false }
+  ]
+}

@@ -1,0 +1,6 @@
+#clues-panel { padding: 16px; }
+.clue-item {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  opacity: 0.7;
+}

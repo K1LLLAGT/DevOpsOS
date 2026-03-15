@@ -1,0 +1,24 @@
+#notify-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99999;
+}
+
+.notify {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-top: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  animation: fadein 0.2s ease-out;
+}
+
+.notify.success { border-left: 4px solid #39ff14; }
+.notify.error { border-left: 4px solid #ff4d4d; }
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

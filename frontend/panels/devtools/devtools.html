@@ -1,0 +1,60 @@
+<div id="devtools">
+
+  <div id="devtools-header">
+    <input id="devtools-search" placeholder="Search events...">
+    <select id="devtools-filter-type">
+      <option value="all">All Types</option>
+    </select>
+    <select id="devtools-filter-source">
+      <option value="all">All Sources</option>
+    </select>
+  </div>
+
+  <div id="devtools-body">
+    <div id="devtools-events"></div>
+    <div id="devtools-inspector">
+      <h3>Event Inspector</h3>
+      <pre id="devtools-inspector-content">Select an event...</pre>
+    </div>
+  </div>
+
+</div>
+<div id="devtools-tabs">
+  <button data-tab="events">Events</button>
+  <button data-tab="plugins">Plugins</button>
+</div>
+
+<div id="devtools-tab-plugins" class="hidden">
+  <div id="plugin-list"></div>
+  <div id="plugin-inspector">
+    <h3>Plugin Inspector</h3>
+    <pre id="plugin-inspector-content">Select a plugin...</pre>
+  </div>
+</div>
+<button data-tab="automation">Automation</button>
+
+<div id="devtools-tab-automation" class="hidden">
+  <div id="automation-rule-list"></div>
+  <div id="automation-rule-inspector">
+    <h3>Rule Inspector</h3>
+    <pre id="automation-rule-content">Select a rule...</pre>
+  </div>
+</div>
+<button data-tab="tasks">Tasks</button>
+
+<div id="devtools-tab-tasks" class="hidden">
+  <div id="task-list"></div>
+  <div id="task-inspector">
+    <h3>Task Inspector</h3>
+    <pre id="task-inspector-content">Select a task...</pre>
+  </div>
+</div>
+<button data-tab="devtools-notifications">Notifications</button>
+
+<div id="devtools-tab-notifications" class="hidden">
+  <div id="devtools-notifications-list"></div>
+  <div id="devtools-notifications-inspector">
+    <h3>Notification Inspector</h3>
+    <pre id="devtools-notifications-content">Select a notification...</pre>
+  </div>
+</div>

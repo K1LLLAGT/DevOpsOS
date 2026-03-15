@@ -1,0 +1,18 @@
+{
+  "unknown": {
+    "color": "#ff4d4d",
+    "description": "Unsigned or unverified plugin."
+  },
+  "community": {
+    "color": "#ffd633",
+    "description": "Signed by a community key."
+  },
+  "verified": {
+    "color": "#39ff14",
+    "description": "Verified by DevOpsOS."
+  },
+  "official": {
+    "color": "#00aaff",
+    "description": "Official DevOpsOS plugin."
+  }
+}

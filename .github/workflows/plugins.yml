@@ -1,0 +1,52 @@
+name: Plugin Marketplace CI
+
+on:
+  pull_request:
+    paths:
+      - "plugins/**"
+      - "backend/services/plugins.js"
+
+jobs:
+  validate-plugins:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Validate plugin structure
+      run: |
+        for plugin in plugins/*; do
+          if [ -d "$plugin" ]; then
+            if [ ! -f "$plugin/plugin.json" ]; then
+              echo "Missing plugin.json in $plugin"
+              exit 1
+            fi
+          fi
+        done
+
+    - name: Validate plugin.json fields
+      run: |
+        for plugin in plugins/*; do
+          if [ -f "$plugin/plugin.json" ]; then
+            NAME=$(jq -r '.name' "$plugin/plugin.json")
+            ID=$(jq -r '.id' "$plugin/plugin.json")
+            VER=$(jq -r '.version' "$plugin/plugin.json")
+
+            if [ "$NAME" = "null" ] || [ "$ID" = "null" ] || [ "$VER" = "null" ]; then
+              echo "Invalid plugin.json in $plugin"
+              exit 1
+            fi
+
+            if ! [[ "$VER" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "Invalid version in $plugin: $VER"
+              exit 1
+            fi
+          fi
+        done
+
+    - name: Run plugin tests (optional)
+      run: |
+        if [ -f "plugins/test.sh" ]; then
+          chmod +x plugins/test.sh
+          plugins/test.sh
+        fi

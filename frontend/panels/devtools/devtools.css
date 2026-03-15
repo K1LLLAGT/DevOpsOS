@@ -1,0 +1,194 @@
+#devtools {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#devtools-header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+#devtools-body {
+  display: flex;
+  gap: 12px;
+  height: calc(100% - 50px);
+}
+
+#devtools-events {
+  flex: 2;
+  overflow-y: auto;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.event-item {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.event-item:hover {
+  background: var(--hover);
+}
+
+.event-type {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.event-time {
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+#devtools-inspector {
+  flex: 1;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  overflow-y: auto;
+}
+#devtools-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+#devtools-tab-plugins {
+  display: flex;
+  gap: 12px;
+  height: calc(100% - 50px);
+}
+
+#plugin-list {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.plugin-item {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.plugin-item:hover {
+  background: var(--hover);
+}
+
+#plugin-inspector {
+  flex: 2;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  overflow-y: auto;
+}
+#devtools-tab-automation {
+  display: flex;
+  gap: 12px;
+  height: calc(100% - 50px);
+}
+
+#automation-rule-list {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.rule-item {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.rule-item:hover {
+  background: var(--hover);
+}
+
+#automation-rule-inspector {
+  flex: 2;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  overflow-y: auto;
+}
+#devtools-tab-tasks {
+  display: flex;
+  gap: 12px;
+  height: calc(100% - 50px);
+}
+
+#task-list {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.task-item {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.task-item:hover {
+  background: var(--hover);
+}
+
+#task-inspector {
+  flex: 2;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  overflow-y: auto;
+}
+#devtools-tab-notifications {
+  display: flex;
+  gap: 12px;
+  height: calc(100% - 50px);
+}
+
+#devtools-notifications-list {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.devtools-notification-item {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.devtools-notification-item:hover {
+  background: var(--hover);
+}
+
+#devtools-notifications-inspector {
+  flex: 2;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  overflow-y: auto;
+}

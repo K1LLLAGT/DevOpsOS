@@ -1,0 +1,56 @@
+#plugin-security {
+  padding: 16px;
+}
+
+.plugin-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.plugin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plugin-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.plugin-risk {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.risk-low { background: #39ff14; color: black; }
+.risk-med { background: #ffd633; color: black; }
+.risk-high { background: #ff4d4d; color: white; }
+
+.plugin-actions button {
+  margin-left: 8px;
+}
+
+#plugin-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#plugin-modal.hidden {
+  display: none;
+}
+
+#plugin-modal-content {
+  background: var(--panel-bg);
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+}

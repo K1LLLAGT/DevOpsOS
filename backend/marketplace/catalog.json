@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    {
+      "id": "hello_world",
+      "name": "Hello World Plugin",
+      "version": "1.0.0",
+      "category": "Utilities",
+      "description": "A simple example plugin.",
+      "author": "DevOpsOS",
+
+      "hidden": false,
+      "forbidden": false,
+      "whisper": ["the root sleeps beneath the surface"],
+      "reveal": {
+        "search": ["root"],
+        "phrase": "THE ROOT IS WITHIN"
+      }
+    }
+  ]
+}

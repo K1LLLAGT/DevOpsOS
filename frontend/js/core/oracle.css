@@ -1,0 +1,70 @@
+/* js/core/oracle.css */
+
+.oracle-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  color: #00ffaa;
+}
+
+.oracle-inner {
+  border: 1px solid #00ffaa;
+  padding: 16px 20px;
+  background: #050608;
+  min-width: 320px;
+  max-width: 480px;
+  box-shadow: 0 0 16px #00ffaa55;
+}
+
+.oracle-header {
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: 0.2em;
+}
+
+.oracle-glyphs {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.oracle-metrics div {
+  margin: 2px 0;
+}
+
+.oracle-footer {
+  margin-top: 10px;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+#oracle-close {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #00ffaa;
+  color: #00ffaa;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.oracle-silence {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #00ffaa;
+  font-family: monospace;
+}
+
+.oracle-silence-inner {
+  border: 1px solid #00ffaa;
+  padding: 10px 16px;
+  background: #050608;
+}

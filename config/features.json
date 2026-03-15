@@ -1,0 +1,36 @@
+{
+  "editor": {
+    "monaco": false,
+    "codemirror": true,
+    "lsp": false,
+    "autosave": false
+  },
+  "ui": {
+    "commandPalette": true,
+    "notifications": true,
+    "globalSearch": true,
+    "themeEngine": true,
+    "keybindingEngine": true,
+    "dashboardLayout": true
+  },
+  "network": {
+    "sshPanel": true,
+    "torPanel": true
+  },
+  "system": {
+    "logsPanel": true,
+    "crashReporter": true,
+    "telemetryLocal": true,
+    "backgroundServices": true
+  },
+  "plugins": {
+    "pluginManager": true,
+    "sandboxing": true,
+    "workspaceSync": true
+  },
+  "updates": {
+    "updateChannels": true,
+    "autoRepair": true,
+    "migrations": true
+  }
+}

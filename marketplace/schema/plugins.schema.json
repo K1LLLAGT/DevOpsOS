@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DevOpsOS Plugin Marketplace",
+  "type": "object",
+  "properties": {
+    "plugins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "version", "description", "trust", "source"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "description": { "type": "string" },
+          "trust": { "type": "string", "enum": ["trusted", "verified", "community", "sandboxed"] },
+          "source": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "homepage": { "type": "string" },
+          "signature": { "type": "string" }
+        }
+      }
+    }
+  },
+  "required": ["plugins"]
+}

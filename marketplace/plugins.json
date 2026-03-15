@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    {
+      "id": "example-plugin",
+      "name": "Example Plugin",
+      "version": "1.0.0",
+      "description": "Sample plugin entry for DevOpsOS marketplace.",
+      "trust": "community",
+      "source": "https://github.com/yourname/devopsos-plugins",
+      "tags": ["example"],
+      "homepage": "https://yourname.github.io/DevOpsOS",
+      "signature": ""
+    }
+  ]
+}
