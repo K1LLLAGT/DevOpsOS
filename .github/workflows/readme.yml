@@ -1,0 +1,25 @@
+name: Generate README
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "generate_readme.sh"
+      - "docs/**"
+
+jobs:
+  build-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x generate_readme.sh
+
+      - name: Generate README
+        run: ./generate_readme.sh
+
+      - name: Commit updated README
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-generate README"
